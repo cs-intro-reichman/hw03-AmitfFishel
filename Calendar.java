@@ -1,7 +1,7 @@
 /** 
  * Prints the calendars of all the years in the 20th century.
  */
-public class Calendar1 {	
+public class Calendar {	
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
@@ -9,41 +9,52 @@ public class Calendar1 {
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	static int sumOfSundays = 0;
+
 	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
 	 * number of Sundays that occured on the first day of the month during this period.
 	 */
 	public static void main(String args[]) {
-		for (year = 1900; year <= 1999; year++) {
+	 int isTheYear = Integer.parseInt(args[0]);
+		for (year = 1900; year <= isTheYear; year++) {
+			for (month = 1; month <= 12; month++) {
+				for (dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month,year); dayOfMonth++) {
+					if(dayOfWeek == 8) {	
+				    	dayOfWeek = 1;
+				    	dayOfWeek++;
+
+					} else {
+				     	dayOfWeek++;
+				}
+					
+			}
+
+		}
+
+	}
+		while (year <= isTheYear) {
 			for (month = 1; month <= 12; month++) {
 				for (dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month,year); dayOfMonth++) {
 					if(dayOfWeek == 8) {	
 					System.out.println(dayOfMonth + "/" + month + "/" + year + "  Sunday"); 
-					if(dayOfWeek == 8 && dayOfMonth == 1) {
-						sumOfSundays++;
-					}	
+					
 					dayOfWeek = 1;
 					dayOfWeek++;
 					
 
 					} else {
 					System.out.println(dayOfMonth + "/" + month + "/" + year); 
-					dayOfWeek++;
-					}
-					
+					dayOfWeek++; } 
+
 				}
 
 			}
 
 		}
-		System.out.println("During the 20th century, " + sumOfSundays +  " Sundays fell on the first day of the month");	
-   } 
 
-       
-
-
-
+	}
+					
 
 
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
@@ -74,7 +85,7 @@ public class Calendar1 {
 		 
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year) {
-	    if (year % 4 == 0 || year == 1900) 
+	    if (year % 4 == 0 ||year == 1900) 
 		return true; 
 	    else 
 		return false;
@@ -94,4 +105,6 @@ public class Calendar1 {
 		}
 		return 0;
 	}
+
 }
+
