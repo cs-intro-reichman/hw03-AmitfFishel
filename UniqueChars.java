@@ -16,8 +16,9 @@ public class UniqueChars {
 
               for (int j = i + 1; j < str.length()-1; j++) {
             char nextChar = str.charAt(j); 
+            char noChar = ' '; 
 
-             if (currentChar != nextChar) {
+             if (currentChar != nextChar && currentChar != noChar ) {
               if (isSolution.indexOf(nextChar) == -1)
               isSolution += nextChar;
 
