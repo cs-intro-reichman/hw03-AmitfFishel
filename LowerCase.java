@@ -16,7 +16,6 @@ public class LowerCase {
                  isSolution += currentChar; 
 
              }
-             //hello
                   
              return isSolution;
             
