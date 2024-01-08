@@ -37,7 +37,7 @@ public class Calendar {
 			for (month = 1; month <= 12; month++) {
 				for (dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month,year); dayOfMonth++) {
 					if(dayOfWeek == 8) {	
-					System.out.println(dayOfMonth + "/" + month + "/" + year + "  Sunday"); 
+					System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday"); 
 					
 					dayOfWeek = 1;
 					dayOfWeek++;
