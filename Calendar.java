@@ -17,7 +17,7 @@ public class Calendar {
 	 */
 	public static void main(String args[]) {
 	 int isTheYear = Integer.parseInt(args[0]);
-		for (year = 1900; year <= isTheYear; year++) {
+		for (year = 1900; year < isTheYear; year++) {
 			for (month = 1; month <= 12; month++) {
 				for (dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month,year); dayOfMonth++) {
 					if(dayOfWeek == 8) {	
@@ -33,7 +33,7 @@ public class Calendar {
 		}
 
 	}
-		while (year <= isTheYear) {
+		while (year == isTheYear) {
 			for (month = 1; month <= 12; month++) {
 				for (dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month,year); dayOfMonth++) {
 					if(dayOfWeek == 8) {	
@@ -50,7 +50,7 @@ public class Calendar {
 				}
 
 			}
-
+                 year++;
 		}
 
 	}
